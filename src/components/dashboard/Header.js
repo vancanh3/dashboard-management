@@ -1,26 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
-  Row,
-  Col,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Button,
-  Popover,
-  PopoverHeader,
-  PopoverBody,
 } from "reactstrap";
 import { logout } from "../../redux/actions/auth.actions";
-import johndoe from "../../assets/images/doe.jpg";
-import { Power } from "react-feather";
+import johndoe from "../../assets/images/avatar.jpg";
 
 export const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Header } from './Header';
-import { Content } from './Content';
-import { Footer } from './Footer';
-import './Dashboard.css';
+import React from "react";
+import { Container } from "reactstrap";
+import { Header } from "./Header";
+import { Content } from "./Content";
+import { Footer } from "./Footer";
+import "./Dashboard.css";
 
 const DashboardPage = () => {
   return (
@@ -15,4 +15,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage; 
+export default DashboardPage;
