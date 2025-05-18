@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Dropdown,
   DropdownToggle,
@@ -14,6 +14,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const user = useSelector((state) => state.auth.user);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
@@ -26,10 +27,13 @@ export const Header = () => {
     }
   };
 
+  // Get display name from user data
+  const displayName = user ? `${user.firstName} ${user.lastName}` : "John Doe";
+
   return (
     <div className="user-profile-menu header bg-white">
       <div className="user-info">
-        <span className="user-name">John Doe</span>
+        <span className="user-name">{displayName}</span>
         <span className="user-status">Available</span>
       </div>
       <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">

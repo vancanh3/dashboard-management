@@ -103,7 +103,7 @@ export const signin = (credentials) => async (dispatch) => {
     localStorage.setItem("refreshToken", refreshToken);
     localStorage.setItem("isAuthorized", true);
 
-    dispatch(signinSuccess(userData));
+    dispatch(signinSuccess(userData?.user));
     return response.data;
   } catch (error) {
     const errorMessage =
